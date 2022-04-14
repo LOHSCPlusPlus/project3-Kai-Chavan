@@ -7,6 +7,7 @@
 #include <fstream> 
 #include "ReadUtils.h"
 const int MAX_GAME=200;
+// default constructor
 Videogames::Videogames() {
     for (int x = 0; x< 200; x++){
       title[x] = '\0';
@@ -20,7 +21,7 @@ Videogames::Videogames() {
 Numsales = 0.0;
   
 }
-
+// read single object
 void Videogames :: read(ifstream &inFile){
   
     
@@ -41,7 +42,7 @@ void Videogames :: read(ifstream &inFile){
     
 
 }
-
+// print single game
 void Videogames :: printV(ostream &out){
     out << title << ";";
     out << Numsales << ";";
@@ -51,6 +52,8 @@ void Videogames :: printV(ostream &out){
   out << dev << ";";
     out << publisher<< endl;
 }
+
+// add game
 
 void Videogames :: addgame (){
    
@@ -72,7 +75,7 @@ cin.getline(publisher,200);
 
   
 }
-
+// returns the developer
 string Videogames :: getDev(){
   return dev;
 }

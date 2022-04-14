@@ -5,14 +5,14 @@
 #include <fstream> 
 #include "ReadUtils.h"
 
-
+// database defualt constructor
 VideogamesDataBase :: VideogamesDataBase (){
   numGames = 0;
   readgames();
 }
 
 
-
+// reads entire file
 void VideogamesDataBase :: readgames() {
     ifstream gameFile("videogames.txt");
     numGames = 0;
@@ -25,20 +25,22 @@ void VideogamesDataBase :: readgames() {
     
 }
 
+// prints the entire array
 void VideogamesDataBase :: printArrayToScreen() {
-  // cout << "here" << endl; 
+  
     for (int index = 0; index < numGames; index++) {
         cout << "Index " << index << ": ";
         games[index].printV(cout);
     }
 }
 
-
+// adds game
 void VideogamesDataBase :: adds (){
   games[numGames].addgame();
   numGames++;
 }
 
+// removes game
 void VideogamesDataBase :: removegame(int x){
 
   for (int z = x; z < numGames -1  ; z++){
@@ -48,6 +50,7 @@ void VideogamesDataBase :: removegame(int x){
   numGames--;
   cout << numGames;
   }
+// prints by developer
 void VideogamesDataBase :: printO (int num){
    string Eorigin = "";
   cout <<"Enter Developer: ";
@@ -64,6 +67,8 @@ void VideogamesDataBase :: printO (int num){
 }
 }
 
+// prints array to a new file
+
 void VideogamesDataBase ::  printArrayToFile() {
   //cout << "here" << endl; 
   ofstream outFile(fileName);
@@ -71,6 +76,8 @@ void VideogamesDataBase ::  printArrayToFile() {
         games[index].printV(outFile);
     }
 }
+
+// inserts instead of just simply adding
 
 void VideogamesDataBase :: insert(){
   int count;
@@ -91,6 +98,8 @@ if (numGames < 200){
 
   
 }
+
+// returns number of games
 int VideogamesDataBase :: num(){
   return numGames;
 }

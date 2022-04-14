@@ -11,7 +11,7 @@ VideogamesDataBase db;
   int ind;
   int numb = 0;
   db.readgames();
-  
+  //While loop for menu
   while (numb != -1){
     cout << '\n';
     cout << "Enter 1 to remove game" << endl;
@@ -27,7 +27,7 @@ VideogamesDataBase db;
     
      cin.ignore(100,'\n');
 
-
+// takes input from menu and redirects to respective function
     if (db.num() < 200 && numb == 2){
   db.adds();
 
